@@ -18,4 +18,19 @@ app.get("/dados", (req,res) => {
     res.send({usuarios})
 })
 
+// Rota para cadastrar pedidos 
+
+app.post("/pedidos", (req, res) => {
+    const pedido = req.body
+    pedidos.push(pedido)
+    res.send({message: "Pedido realizado com sucesso", pedido})
+
+})
+
+// retorna pedidos quando solicitado
+
+app.get("/dadosp", (req,res) => {
+    res.send({pedidos})
+})
+
 app.listen(3000, () => console.log("Servidor monolítico ok, na porta 3000"))
